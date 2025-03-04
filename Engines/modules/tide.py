@@ -209,9 +209,9 @@ class IndexTide:
     def compute_chains(tvm_index: dict) -> dict:
         chain = dict()
         for tvm in (n := tvm_index):
-          print("=====DEBUG=====")  
-          print(tvm)
-          print(n[tvm]) 
+            print("=====DEBUG=====")  
+            print(tvm)
+            print(n[tvm]) 
             if "chaining" in n[tvm]["threat"]:
                 if tvm not in chain:
                     chain[tvm] = dict()
