@@ -30,6 +30,11 @@ def run():
     for model in MODELS_TYPES:
         for file in sorted(os.listdir(PATHS[model])):
             data = yaml.safe_load(open(PATHS[model] / file, encoding="utf-8"))
+            print("====START DEBUG===")
+            print(model)
+            print(PATHS[model] / file)
+            print(data["name"])
+            print("====END DEBUG===")
             model_name = data["name"]
             standard_name = f"{safe_file_name(model_name)}.yaml"
 
