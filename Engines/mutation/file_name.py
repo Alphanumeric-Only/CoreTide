@@ -29,10 +29,10 @@ def run():
     MODELS_TYPES.remove("mdr")
     for model in MODELS_TYPES:
         for file in sorted(os.listdir(PATHS[model])):
-            data = yaml.safe_load(open(PATHS[model] / file, encoding="utf-8"))
             print("====START DEBUG===")
             print(model)
             print(PATHS[model] / file)
+            data = yaml.safe_load(open(PATHS[model] / file, encoding="utf-8"))
             print(data["name"])
             print("====END DEBUG===")
             model_name = data["name"]
