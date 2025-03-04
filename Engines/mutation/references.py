@@ -90,6 +90,10 @@ def run():
         folder = MODELS_FOLDER[model_type]
         log("INFO", "Now processing all files under model type", model_type)
         for file in sorted(os.listdir(folder)):
+            print("====START DEBUG===")
+            print(folder)
+            print(file)
+            print("====END DEBUG===")
             raw_body = open(folder / file, "r", encoding="utf-8").read()
             yaml_body = yaml.safe_load(raw_body)
             current_references = yaml_body.get("references")
