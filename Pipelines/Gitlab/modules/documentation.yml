@@ -16,9 +16,13 @@
     - cp index.json $TIDE_WIKI/
 
     # Extract the staging index to Core Root for reconciliation - EDITED to avoid error "cp: cannot stat 'InitTide.wiki/staging_index.json': No such file or directory"
-    - if [ -e $TIDE_WIKI/staging_index.json ]
-    -  then cp $TIDE_WIKI/staging_index.json ./
+    #- if [ -e $TIDE_WIKI/staging_index.json ]
+    #-  then cp $TIDE_WIKI/staging_index.json ./
+    #- fi
+    - if [ -e $TIDE_WIKI/index.json ]
+    -  then cp $TIDE_WIKI/index.json ./
     - fi
+
     - ls -lah
     # Execute documentation toolchain
     - cd Orchestration/
@@ -56,9 +60,9 @@
     - fi
 
     # Extract the staging index to Core Root for reconciliation
-    - if [ -e $TIDE_WIKI/index.json ]
-    -  then cp $TIDE_WIKI/index.json ./
-    - fi
+    #- if [ -e $TIDE_WIKI/index.json ]
+    #-  then cp $TIDE_WIKI/index.json ./
+    #- fi
 
     # Import staging index, run staging_indexer to update it, copy
     # it back into the wiki for future computations
