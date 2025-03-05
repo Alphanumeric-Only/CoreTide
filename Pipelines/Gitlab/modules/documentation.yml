@@ -51,9 +51,9 @@
     - pwd 
 
     # Extract the staging index to Core Root for reconciliation - EDITED to avoid error "cp: cannot stat 'InitTide.wiki/staging_index.json': No such file or directory"
-    #- if [ -e $TIDE_WIKI/staging_index.json ]
-    #-  then cp $TIDE_WIKI/staging_index.json ./
-    #- fi
+    - if [ -e $TIDE_WIKI/staging_index.json ]
+    -  then cp $TIDE_WIKI/staging_index.json ./
+    - fi
 
     # Extract the staging index to Core Root for reconciliation
     - if [ -e $TIDE_WIKI/index.json ]
