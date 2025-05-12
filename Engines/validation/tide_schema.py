@@ -30,6 +30,7 @@ def run():
 
         if schema in MODELS_INDEX:
             schema_data = JSONSCHEMAS_INDEX[schema]
+            schema_data['properties']['configurations']['additionalProperties'] = True
             v = Draft7Validator(schema_data)
 
             for model in MODELS_INDEX[schema]:
