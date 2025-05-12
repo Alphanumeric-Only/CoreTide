@@ -80,7 +80,8 @@ class MigrateSecurityDomainMDR:
 
     def migrate(self):
         for mdr in os.listdir(PATHS["mdr"]):
-
+            if mdr.endswith('.gitkeep'):
+                continue
             data = yaml.safe_load(open(MDR_PATH/mdr, encoding="utf-8"))
             mdr_name = data["name"]
             log("INFO", "Assessing if security_domain should be migrated", mdr_name)
