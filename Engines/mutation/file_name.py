@@ -32,6 +32,8 @@ def run():
             print("====START DEBUG===")
             print(model)
             print(PATHS[model] / file)
+            if file.endswith('.gitkeep'):
+                continue
             data = yaml.safe_load(open(PATHS[model] / file, encoding="utf-8"))
             print(data["name"])
             print("====END DEBUG===")
