@@ -29,6 +29,8 @@ def id_to_uuid_mapper():
         if model == "mdr":
             continue
         for file in sorted(os.listdir(PATHS[model])):
+            if file.endswith('.gitkeep'):
+                continue
             data = yaml.safe_load(open(PATHS[model] / file, encoding="utf-8"))
             old_id:str = data.get("id")
             if not old_id:
