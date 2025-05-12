@@ -56,6 +56,8 @@ def schema_update():
         schema_version = model + "::2.0"
 
         for file in sorted(os.listdir(PATHS[model])):
+            if file.endswith('.gitkeep'):
+                continue
             data = yaml.safe_load(open(PATHS[model] / file, encoding="utf-8"))
             if "uuid" in data["metadata"]:
                 log("SKIP", "Already Migrated")
